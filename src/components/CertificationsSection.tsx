@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, ChevronLeft, ChevronRight } from "lucide-react";
@@ -18,14 +17,14 @@ const CertificationsSection = () => {
       title: "DevOps",
       issuer: "IBM",
       date: "2023",
-      image: "https://i.ibb.co/M5NDh5K/DEVoPS.jpg",
+      image: "https://marvel-b1-cdn.bc0a.com/f00000000236551/dt-cdn.net/wp-content/uploads/2021/07/13429_ILL_DevOpsLoop.png",
       description: "Comprehensive DevOps training covering CI/CD pipelines, containerization, and automation."
     },
     {
       title: "Excel Skills",
       issuer: "Microsoft",
       date: "2023",
-      image: "https://i.ibb.co/fdMrHkG/excel.jpg",
+      image: "https://i0.wp.com/knowasap.com/wp-content/uploads/2020/03/EXCEL-d.png?fit=2000%2C1545&ssl=1",
       description: "Advanced Excel skills including data analysis, visualization, and automation."
     },
     {

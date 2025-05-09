@@ -46,8 +46,7 @@ const SkillsSection = () => {
                         <span className="text-sm text-gray-400">{skill.level}%</span>
                       </div>
                     </div>
-                    <Progress value={skill.level} className="h-2" 
-                      indicatorClassName="bg-gradient-to-r from-purple to-blue" />
+                    <Progress value={skill.level} className="h-2 bg-secondary [&>div]:bg-gradient-to-r [&>div]:from-purple [&>div]:to-blue" />
                   </Card>
                 </div>
               ))}
@@ -67,8 +66,7 @@ const SkillsSection = () => {
                         <span className="text-sm text-gray-400">{skill.level}%</span>
                       </div>
                     </div>
-                    <Progress value={skill.level} className="h-2"
-                      indicatorClassName="bg-gradient-to-r from-blue to-purple" />
+                    <Progress value={skill.level} className="h-2 bg-secondary [&>div]:bg-gradient-to-r [&>div]:from-blue [&>div]:to-purple" />
                   </Card>
                 </div>
               ))}
