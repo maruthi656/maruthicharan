@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, ChevronLeft, ChevronRight } from "lucide-react";
@@ -117,6 +118,90 @@ const CertificationsSection = () => {
       date: "2023",
       image: "https://i.ibb.co/5gZQ8R7/V-V-MARUTHI-CHARAN-Internship-Certificate.jpg",
       description: "Recognition for completing professional internship."
+    },
+    {
+      title: "Certificate 1",
+      issuer: "Educational Provider",
+      date: "2024",
+      image: "https://i.ibb.co/wrBC7mV/Screenshot-2025-05-09-091431.png",
+      description: "Professional certification in technical field."
+    },
+    {
+      title: "Certificate 2",
+      issuer: "Tech Academy",
+      date: "2024",
+      image: "https://i.ibb.co/1YDZjHh/Screenshot-2025-05-09-091411.png",
+      description: "Technical skills certification."
+    },
+    {
+      title: "Certificate 3",
+      issuer: "Online Learning Platform",
+      date: "2024",
+      image: "https://i.ibb.co/cM72RKt/Screenshot-2025-05-09-090818.png",
+      description: "Completion of specialized technical course."
+    },
+    {
+      title: "Certificate 4",
+      issuer: "Technical Institute",
+      date: "2024",
+      image: "https://i.ibb.co/yFC2xng/Screenshot-2025-05-09-090949.png",
+      description: "Advanced technical certification."
+    },
+    {
+      title: "Certificate 5",
+      issuer: "Learning Portal",
+      date: "2024",
+      image: "https://i.ibb.co/TM7FdCY/Screenshot-2025-05-09-090912.png",
+      description: "Professional development in technology field."
+    },
+    {
+      title: "Certificate 6",
+      issuer: "Digital Academy",
+      date: "2024",
+      image: "https://i.ibb.co/c4V0wQk/Screenshot-2025-05-09-091108.png",
+      description: "Specialized technical training completion."
+    },
+    {
+      title: "Certificate 7",
+      issuer: "Tech Education",
+      date: "2024",
+      image: "https://i.ibb.co/JjBN7DD/Screenshot-2025-05-09-091208.png",
+      description: "Professional certification in information technology."
+    },
+    {
+      title: "Certificate 8",
+      issuer: "Professional Development",
+      date: "2024",
+      image: "https://i.ibb.co/pvnR2Dd/Screenshot-2025-05-09-091145.png",
+      description: "Technical skills and knowledge certification."
+    },
+    {
+      title: "Certificate 9",
+      issuer: "Technical Training",
+      date: "2024",
+      image: "https://i.ibb.co/dJXPRf1/Screenshot-2025-05-09-091230.png",
+      description: "Professional competency validation."
+    },
+    {
+      title: "Certificate 10",
+      issuer: "Digital Learning",
+      date: "2024",
+      image: "https://i.ibb.co/xS9qtbM/Screenshot-2025-05-09-091250.png",
+      description: "Advanced technical skills certification."
+    },
+    {
+      title: "Certificate 11",
+      issuer: "Online Education",
+      date: "2024",
+      image: "https://i.ibb.co/DPPHC4S/Screenshot-2025-05-09-091316.png",
+      description: "Specialized technology training completion."
+    },
+    {
+      title: "Certificate 12",
+      issuer: "Professional Course",
+      date: "2024",
+      image: "https://i.ibb.co/4gCt3JT/Screenshot-2025-05-09-091333.png",
+      description: "Technical expertise certification."
     }
   ];
 
