@@ -11,23 +11,23 @@ const InternshipsSection = () => {
       company: "Tech Solutions Inc.",
       position: "Web Development Intern",
       duration: "May 2023 - July 2023",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      image: "https://i.ibb.co/Mk0g7gY1/INTERNSHHIP.jpg",
       description: "Worked on developing responsive web interfaces using HTML, CSS, and JavaScript. Collaborated with the design team to implement UI components.",
       skills: ["HTML", "CSS", "JavaScript", "UI Design"]
     },
     {
-      company: "Digital Creations",
-      position: "Content Creation Intern",
+      company: "Cloud Services Provider",
+      position: "Cloud Internship",
       duration: "August 2023 - October 2023",
-      image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      image: "https://i.ibb.co/pB59MkYd/CLOUD-INTERNSHIP.jpg",
       description: "Created engaging digital content for the company's social media platforms. Assisted in video editing and graphics design for marketing campaigns.",
-      skills: ["Content Creation", "Video Editing", "Social Media", "Marketing"]
+      skills: ["Cloud Computing", "AWS", "Azure", "DevOps"]
     },
     {
-      company: "DataWare Systems",
-      position: "Database Management Intern",
+      company: "DataValley",
+      position: "Data Engineering Intern",
       duration: "November 2023 - January 2024",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      image: "https://i.ibb.co/wN4sBjVx/DATAVALLEY-INTERNSHIP.jpg",
       description: "Assisted in database design and implementation using SQL and MongoDB. Participated in data analysis and reporting projects.",
       skills: ["SQL", "MongoDB", "Data Analysis", "Reporting"]
     }
@@ -61,6 +61,9 @@ const InternshipsSection = () => {
                     src={internship.image} 
                     alt={internship.company} 
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80";
+                    }}
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t from-dark to-transparent flex flex-col justify-end p-6 transition-opacity duration-300 ${
                     activeIndex === index ? 'opacity-100 bg-dark/80' : 'opacity-100'

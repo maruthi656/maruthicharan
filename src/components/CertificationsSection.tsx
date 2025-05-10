@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, ChevronLeft, ChevronRight } from "lucide-react";
@@ -75,33 +76,12 @@ const CertificationsSection = () => {
       date: "2023",
       image: "https://i.ibb.co/gFjdx3rn/TYPE-SCRIPT.jpg",
       description: "TypeScript programming language and advanced typing concepts."
-    },
-    {
-      title: "General Internship",
-      issuer: "Technology Company",
-      date: "2023",
-      image: "https://i.ibb.co/Mk0g7gY1/INTERNSHHIP.jpg",
-      description: "Professional development through hands-on industry experience."
-    },
-    {
-      title: "Cloud Internship",
-      issuer: "Cloud Services Provider",
-      date: "2023",
-      image: "https://i.ibb.co/pB59MkYd/CLOUD-INTERNSHIP.jpg",
-      description: "Specialized internship focused on cloud computing technologies."
-    },
-    {
-      title: "DataValley Internship",
-      issuer: "DataValley",
-      date: "2023",
-      image: "https://i.ibb.co/wN4sBjVx/DATAVALLEY-INTERNSHIP.jpg",
-      description: "Professional internship with focus on data engineering and analytics."
     }
   ];
 
   // For larger screens: Grid display
   const renderGridView = () => (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 hidden md:grid">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 hidden md:grid">
       {certificates.map((cert, index) => (
         <div 
           key={index} 
