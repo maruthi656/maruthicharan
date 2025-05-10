@@ -39,10 +39,10 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: <Github size={20} />, name: "GitHub", href: "https://github.com/" },
-    { icon: <Linkedin size={20} />, name: "LinkedIn", href: "https://linkedin.com/" },
-    { icon: <Twitter size={20} />, name: "Twitter", href: "https://twitter.com/" },
-    { icon: <Instagram size={20} />, name: "Instagram", href: "https://instagram.com/" }
+    { icon: <Github size={20} />, name: "GitHub", href: "https://github.com/maruthi126" },
+    { icon: <Linkedin size={20} />, name: "LinkedIn", href: "https://www.linkedin.com/in/maruthi-charan-veluvarthi-141b622b4" },
+    { icon: <Twitter size={20} />, name: "Twitter", href: "https://x.com/MARUTHICHARANV?t=1E1pkgqhfoKzOl02IU1Iyw&s=09" },
+    { icon: <Instagram size={20} />, name: "Instagram", href: "https://www.instagram.com/_maruthi_charan_?igsh=NmV6dGxxbnA5NnNs" }
   ];
 
   // Handle form submission with EmailJS
