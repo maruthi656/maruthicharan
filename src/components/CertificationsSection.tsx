@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, ChevronLeft, ChevronRight } from "lucide-react";
@@ -18,190 +17,85 @@ const CertificationsSection = () => {
       title: "DevOps",
       issuer: "IBM",
       date: "2023",
-      image: "https://marvel-b1-cdn.bc0a.com/f00000000236551/dt-cdn.net/wp-content/uploads/2021/07/13429_ILL_DevOpsLoop.png",
+      image: "https://i.ibb.co/7Jnf4j40/DEVOPS.jpg",
       description: "Comprehensive DevOps training covering CI/CD pipelines, containerization, and automation."
     },
     {
       title: "Excel Skills",
       issuer: "Microsoft",
       date: "2023",
-      image: "https://i0.wp.com/knowasap.com/wp-content/uploads/2020/03/EXCEL-d.png?fit=2000%2C1545&ssl=1",
+      image: "https://i.ibb.co/dJ31XxZ2/EXCEL.jpg",
       description: "Advanced Excel skills including data analysis, visualization, and automation."
     },
     {
-      title: "GEO Informatics",
-      issuer: "NPTEL",
+      title: "HTML 5",
+      issuer: "Web Development Academy",
       date: "2023",
-      image: "https://i.ibb.co/0yv8PPs/GEO-2.jpg",
-      description: "Geographic Information Systems and spatial data analysis techniques."
+      image: "https://i.ibb.co/JRzDYDT1/HTML-5.jpg",
+      description: "Modern HTML5 web development techniques and best practices."
     },
     {
-      title: "GEO Specialization",
-      issuer: "NPTEL",
+      title: "IBM NoSQL",
+      issuer: "IBM",
       date: "2023",
-      image: "https://i.ibb.co/v0Nrdnk/GEO.jpg",
-      description: "Advanced geographic information systems specialization."
-    },
-    {
-      title: "DOC Certification",
-      issuer: "WA University",
-      date: "2023",
-      image: "https://i.ibb.co/ZRbL0kT/DOC-20241223-WA0003.jpg",
-      description: "Documentation and technical writing certification."
-    },
-    {
-      title: "IBM Certificate",
-      issuer: "IBM via edX",
-      date: "2023",
-      image: "https://i.ibb.co/pvzP1zH/IBM-Certificate-ed-X.jpg",
-      description: "IBM professional certification through edX platform."
-    },
-    {
-      title: "Infosys Certification",
-      issuer: "Infosys",
-      date: "2023",
-      image: "https://i.ibb.co/gMf1PRm/infosys.jpg",
-      description: "Professional development certification from Infosys."
+      image: "https://i.ibb.co/v6tSjxCN/IBM-NOSQL.jpg",
+      description: "Database management with NoSQL technologies from IBM."
     },
     {
       title: "JavaScript",
-      issuer: "Online Academy",
+      issuer: "Web Academy",
       date: "2023",
-      image: "https://i.ibb.co/RTPvBX2/java-script.jpg",
+      image: "https://i.ibb.co/YT1BgtGV/JS.jpg",
       description: "JavaScript programming fundamentals and advanced concepts."
     },
     {
-      title: "Academic Certificate",
-      issuer: "Educational Institution",
-      date: "2023",
-      image: "https://i.ibb.co/5WjChtT/MARUTHI-CHARAN-VELUVARTHI-855332.jpg",
-      description: "Academic achievement certification."
-    },
-    {
       title: "Node.js",
-      issuer: "Web Academy",
+      issuer: "Web Development Institute",
       date: "2023",
-      image: "https://i.ibb.co/bRHwtMF/node-js.jpg",
+      image: "https://i.ibb.co/Sw17DcgT/NODE-JS.jpg",
       description: "Server-side JavaScript with Node.js technologies."
     },
     {
       title: "Power BI",
       issuer: "Microsoft",
       date: "2023",
-      image: "https://i.ibb.co/mrvdcCY/power-bi-certificate.jpg",
+      image: "https://i.ibb.co/20t7nV9p/POWER-BI.jpg",
       description: "Data visualization and business intelligence using Power BI."
     },
     {
-      title: "Python Basics",
+      title: "Python",
       issuer: "Python Institute",
       date: "2023",
-      image: "https://i.ibb.co/ZzLFtr6/python-begining.jpg",
-      description: "Introduction to Python programming language."
+      image: "https://i.ibb.co/4RdT5Nf3/PYTHON.jpg",
+      description: "Python programming language fundamentals and applications."
     },
     {
       title: "TypeScript",
-      issuer: "Web Development Institute",
+      issuer: "Web Development Academy",
       date: "2023",
-      image: "https://i.ibb.co/N24tHYv/typescript.jpg",
-      description: "TypeScript programming language fundamentals."
+      image: "https://i.ibb.co/gFjdx3rn/TYPE-SCRIPT.jpg",
+      description: "TypeScript programming language and advanced typing concepts."
     },
     {
-      title: "Professional Certificate",
-      issuer: "Professional Body",
+      title: "General Internship",
+      issuer: "Technology Company",
       date: "2023",
-      image: "https://i.ibb.co/VpbTNFV/V-VENKATA-MARUTHI-CHARAN.jpg",
-      description: "Professional certification in specialized field."
+      image: "https://i.ibb.co/Mk0g7gY1/INTERNSHHIP.jpg",
+      description: "Professional development through hands-on industry experience."
     },
     {
-      title: "Internship Certificate",
-      issuer: "Company Name",
+      title: "Cloud Internship",
+      issuer: "Cloud Services Provider",
       date: "2023",
-      image: "https://i.ibb.co/5gZQ8R7/V-V-MARUTHI-CHARAN-Internship-Certificate.jpg",
-      description: "Recognition for completing professional internship."
+      image: "https://i.ibb.co/pB59MkYd/CLOUD-INTERNSHIP.jpg",
+      description: "Specialized internship focused on cloud computing technologies."
     },
     {
-      title: "Certificate 1",
-      issuer: "Educational Provider",
-      date: "2024",
-      image: "https://i.ibb.co/wrBC7mV/Screenshot-2025-05-09-091431.png",
-      description: "Professional certification in technical field."
-    },
-    {
-      title: "Certificate 2",
-      issuer: "Tech Academy",
-      date: "2024",
-      image: "https://i.ibb.co/1YDZjHh/Screenshot-2025-05-09-091411.png",
-      description: "Technical skills certification."
-    },
-    {
-      title: "Certificate 3",
-      issuer: "Online Learning Platform",
-      date: "2024",
-      image: "https://i.ibb.co/cM72RKt/Screenshot-2025-05-09-090818.png",
-      description: "Completion of specialized technical course."
-    },
-    {
-      title: "Certificate 4",
-      issuer: "Technical Institute",
-      date: "2024",
-      image: "https://i.ibb.co/yFC2xng/Screenshot-2025-05-09-090949.png",
-      description: "Advanced technical certification."
-    },
-    {
-      title: "Certificate 5",
-      issuer: "Learning Portal",
-      date: "2024",
-      image: "https://i.ibb.co/TM7FdCY/Screenshot-2025-05-09-090912.png",
-      description: "Professional development in technology field."
-    },
-    {
-      title: "Certificate 6",
-      issuer: "Digital Academy",
-      date: "2024",
-      image: "https://i.ibb.co/c4V0wQk/Screenshot-2025-05-09-091108.png",
-      description: "Specialized technical training completion."
-    },
-    {
-      title: "Certificate 7",
-      issuer: "Tech Education",
-      date: "2024",
-      image: "https://i.ibb.co/JjBN7DD/Screenshot-2025-05-09-091208.png",
-      description: "Professional certification in information technology."
-    },
-    {
-      title: "Certificate 8",
-      issuer: "Professional Development",
-      date: "2024",
-      image: "https://i.ibb.co/pvnR2Dd/Screenshot-2025-05-09-091145.png",
-      description: "Technical skills and knowledge certification."
-    },
-    {
-      title: "Certificate 9",
-      issuer: "Technical Training",
-      date: "2024",
-      image: "https://i.ibb.co/dJXPRf1/Screenshot-2025-05-09-091230.png",
-      description: "Professional competency validation."
-    },
-    {
-      title: "Certificate 10",
-      issuer: "Digital Learning",
-      date: "2024",
-      image: "https://i.ibb.co/xS9qtbM/Screenshot-2025-05-09-091250.png",
-      description: "Advanced technical skills certification."
-    },
-    {
-      title: "Certificate 11",
-      issuer: "Online Education",
-      date: "2024",
-      image: "https://i.ibb.co/DPPHC4S/Screenshot-2025-05-09-091316.png",
-      description: "Specialized technology training completion."
-    },
-    {
-      title: "Certificate 12",
-      issuer: "Professional Course",
-      date: "2024",
-      image: "https://i.ibb.co/4gCt3JT/Screenshot-2025-05-09-091333.png",
-      description: "Technical expertise certification."
+      title: "DataValley Internship",
+      issuer: "DataValley",
+      date: "2023",
+      image: "https://i.ibb.co/wN4sBjVx/DATAVALLEY-INTERNSHIP.jpg",
+      description: "Professional internship with focus on data engineering and analytics."
     }
   ];
 
