@@ -1,12 +1,37 @@
 
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, Github, Linkedin, Twitter, Instagram, Send, Loader } from "lucide-react";
+import emailjs from "emailjs-com";
+
+// EmailJS configuration
+const SERVICE_ID = "service_btls3f1";
+const TEMPLATE_ID = "template_9q5obeh";
+const PUBLIC_KEY = "WGc6_3zifjKCV2pAb";
+
+// Form fields type
+type FormValues = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 const ContactSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Initialize emailjs
+  emailjs.init(PUBLIC_KEY);
+  
+  // Initialize react-hook-form
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>();
+  
   const contactInfo = [
     { icon: <Mail size={20} />, text: "vv.maruthicharan@gmail.com", href: "mailto:vv.maruthicharan@gmail.com" },
     { icon: <Phone size={20} />, text: "+91 8179340270", href: "tel:+918179340270" },
@@ -19,6 +44,39 @@ const ContactSection = () => {
     { icon: <Twitter size={20} />, name: "Twitter", href: "https://twitter.com/" },
     { icon: <Instagram size={20} />, name: "Instagram", href: "https://instagram.com/" }
   ];
+
+  // Handle form submission with EmailJS
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message
+      };
+      
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+      
+      toast({
+        title: "Message Sent!",
+        description: "Your message has been sent successfully. I'll get back to you soon!",
+      });
+      
+      // Reset the form
+      reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        variant: "destructive",
+        title: "Failed to send",
+        description: "There was a problem sending your message. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="section-padding bg-dark-accent">
@@ -39,59 +97,92 @@ const ContactSection = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold mb-6 font-heading">Send Me a Message</h3>
                 
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
-                        Name
+                        Name *
                       </label>
                       <Input
                         id="name"
                         placeholder="Your Name"
-                        className="bg-dark/50 border-white/10 focus:border-purple/50 text-white"
+                        className={`bg-dark/50 border-white/10 focus:border-purple/50 text-white ${errors.name ? "border-red-500" : ""}`}
+                        {...register("name", { required: "Name is required" })}
                       />
+                      {errors.name && (
+                        <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+                      )}
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
-                        Email
+                        Email *
                       </label>
                       <Input
                         id="email"
                         type="email"
                         placeholder="Your Email"
-                        className="bg-dark/50 border-white/10 focus:border-purple/50 text-white"
+                        className={`bg-dark/50 border-white/10 focus:border-purple/50 text-white ${errors.email ? "border-red-500" : ""}`}
+                        {...register("email", { 
+                          required: "Email is required",
+                          pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "Invalid email address"
+                          }
+                        })}
                       />
+                      {errors.email && (
+                        <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+                      )}
                     </div>
                   </div>
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-2">
-                      Subject
+                      Subject *
                     </label>
                     <Input
                       id="subject"
                       placeholder="Message Subject"
-                      className="bg-dark/50 border-white/10 focus:border-purple/50 text-white"
+                      className={`bg-dark/50 border-white/10 focus:border-purple/50 text-white ${errors.subject ? "border-red-500" : ""}`}
+                      {...register("subject", { required: "Subject is required" })}
                     />
+                    {errors.subject && (
+                      <p className="mt-1 text-sm text-red-500">{errors.subject.message}</p>
+                    )}
                   </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
-                      Message
+                      Message *
                     </label>
                     <Textarea
                       id="message"
                       rows={5}
                       placeholder="Your Message"
-                      className="bg-dark/50 border-white/10 focus:border-purple/50 text-white resize-none"
+                      className={`bg-dark/50 border-white/10 focus:border-purple/50 text-white resize-none ${errors.message ? "border-red-500" : ""}`}
+                      {...register("message", { required: "Message is required" })}
                     />
+                    {errors.message && (
+                      <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
+                    )}
                   </div>
                   
                   <Button 
                     type="submit" 
                     className="w-full bg-gradient-to-r from-purple to-blue text-white hover:opacity-90"
+                    disabled={isSubmitting}
                   >
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <Loader className="animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send />
+                        Send Message
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
